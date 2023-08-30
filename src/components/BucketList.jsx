@@ -3,13 +3,14 @@ import BucketForm from './BucketForm';
 import Bucket from './Bucket';
 
 function BucketList() {
+  // Declare a new state variable, "bucket"
   const [bucket, setBucket] = useState([]);
 
   // Function to add a bucket list item
   const addBucketItem = (item) => {
 
-    // TODO: Write logic to add the new bucket item to the bucket state variable
-    
+    // Write logic to add the new bucket item to the bucket state variable
+    setBucket([...bucket, item]);
   };
 
   // Function to mark bucket list item as complete
@@ -18,7 +19,8 @@ function BucketList() {
     let updatedBucket = bucket.map((item) => {
       
       // TODO: Write logic that marks an item as complete or incomplete when invoked
-
+      (item.id === id ? { ...item, complete: true} : item);
+      
     });
 
     setBucket(updatedBucket);
